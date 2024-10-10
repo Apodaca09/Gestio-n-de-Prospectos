@@ -1,0 +1,21 @@
+C:\Users\Apoda\Documents\Entrevista\Prospect System\Prospect System\obj\Debug\net8.0-windows\Prospect System.csproj.GenerateResource.cache
+C:\Users\Apoda\Documents\Entrevista\Prospect System\Prospect System\obj\Debug\net8.0-windows\Prospect System.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Apoda\Documents\Entrevista\Prospect System\Prospect System\obj\Debug\net8.0-windows\Prospect System.AssemblyInfoInputs.cache
+C:\Users\Apoda\Documents\Entrevista\Prospect System\Prospect System\obj\Debug\net8.0-windows\Prospect System.AssemblyInfo.cs
+C:\Users\Apoda\Documents\Entrevista\Prospect System\Prospect System\obj\Debug\net8.0-windows\Prospect System.csproj.CoreCompileInputs.cache
+C:\Users\Apoda\Documents\Entrevista\Prospect System\Prospect System\bin\Debug\net8.0-windows\Prospect System.exe
+C:\Users\Apoda\Documents\Entrevista\Prospect System\Prospect System\bin\Debug\net8.0-windows\Prospect System.deps.json
+C:\Users\Apoda\Documents\Entrevista\Prospect System\Prospect System\bin\Debug\net8.0-windows\Prospect System.runtimeconfig.json
+C:\Users\Apoda\Documents\Entrevista\Prospect System\Prospect System\bin\Debug\net8.0-windows\Prospect System.dll
+C:\Users\Apoda\Documents\Entrevista\Prospect System\Prospect System\bin\Debug\net8.0-windows\Prospect System.pdb
+C:\Users\Apoda\Documents\Entrevista\Prospect System\Prospect System\obj\Debug\net8.0-windows\Prospect_System.Properties.Resources.resources
+C:\Users\Apoda\Documents\Entrevista\Prospect System\Prospect System\obj\Debug\net8.0-windows\Prospect System.dll
+C:\Users\Apoda\Documents\Entrevista\Prospect System\Prospect System\obj\Debug\net8.0-windows\refint\Prospect System.dll
+C:\Users\Apoda\Documents\Entrevista\Prospect System\Prospect System\obj\Debug\net8.0-windows\Prospect System.pdb
+C:\Users\Apoda\Documents\Entrevista\Prospect System\Prospect System\obj\Debug\net8.0-windows\Prospect System.genruntimeconfig.cache
+C:\Users\Apoda\Documents\Entrevista\Prospect System\Prospect System\obj\Debug\net8.0-windows\ref\Prospect System.dll
+C:\Users\Apoda\Documents\Entrevista\Prospect System\Prospect System\obj\Debug\net8.0-windows\Prospect_System.Views.CaptureInfo.resources
+C:\Users\Apoda\Documents\Entrevista\Prospect System\Prospect System\obj\Debug\net8.0-windows\Prospect_System.Views.Main.resources
+C:\Users\Apoda\Documents\Entrevista\Prospect System\Prospect System\obj\Debug\net8.0-windows\Prospect_System.Views.ProspectsList.resources
+C:\Users\Apoda\Documents\Entrevista\Prospect System\Prospect System\obj\Debug\net8.0-windows\Prospect_System.Views.Evaluation.resources
+C:\Users\Apoda\Documents\Entrevista\Prospect System\Prospect System\obj\Debug\net8.0-windows\Prospect_System.Views.ObservationDialog.resources
