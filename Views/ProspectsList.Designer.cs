@@ -28,31 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lstDetailsProspects = new ListView();
+            dgvProspects = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvProspects).BeginInit();
             SuspendLayout();
             // 
-            // lstDetailsProspects
+            // dgvProspects
             // 
-            lstDetailsProspects.Dock = DockStyle.Fill;
-            lstDetailsProspects.Location = new Point(0, 0);
-            lstDetailsProspects.Name = "lstDetailsProspects";
-            lstDetailsProspects.Size = new Size(1137, 457);
-            lstDetailsProspects.TabIndex = 0;
-            lstDetailsProspects.UseCompatibleStateImageBehavior = false;
-            lstDetailsProspects.View = View.Details;
+            dgvProspects.BackgroundColor = SystemColors.Control;
+            dgvProspects.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvProspects.Dock = DockStyle.Fill;
+            dgvProspects.Location = new Point(0, 0);
+            dgvProspects.Name = "dgvProspects";
+            dgvProspects.Size = new Size(1256, 457);
+            dgvProspects.TabIndex = 0;
+            dgvProspects.CellClick += dgvProspects_CellClick;
             // 
             // ProspectsList
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(lstDetailsProspects);
+            Controls.Add(dgvProspects);
             Name = "ProspectsList";
-            Size = new Size(1137, 457);
+            Size = new Size(1256, 457);
+            ((System.ComponentModel.ISupportInitialize)dgvProspects).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private ListView lstDetailsProspects;
+        private DataGridView dgvProspects;
     }
 }

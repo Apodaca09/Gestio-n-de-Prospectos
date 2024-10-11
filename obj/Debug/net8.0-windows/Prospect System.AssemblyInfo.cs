@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Prospect System")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1afd90a979ad0e828e1d3004c2a1d967d672371a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Prospect System")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Prospect System")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

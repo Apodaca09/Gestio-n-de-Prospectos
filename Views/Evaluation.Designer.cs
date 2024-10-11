@@ -43,7 +43,7 @@
             AcceptBtn = new PictureBox();
             DeclineBtn = new PictureBox();
             toolTipMessage = new ToolTip(components);
-            comboBox1 = new ComboBox();
+            cmbDocuments = new ComboBox();
             lblName = new Label();
             lblPhoneNumber = new Label();
             lblNumber = new Label();
@@ -53,6 +53,7 @@
             lblSecondLastName = new Label();
             lblStreet = new Label();
             lblZipCode = new Label();
+            pdfPanel = new Panel();
             ((System.ComponentModel.ISupportInitialize)AcceptBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DeclineBtn).BeginInit();
             SuspendLayout();
@@ -60,17 +61,18 @@
             // cmbProspects
             // 
             cmbProspects.FormattingEnabled = true;
-            cmbProspects.Location = new Point(165, 47);
+            cmbProspects.Location = new Point(146, 52);
             cmbProspects.Name = "cmbProspects";
             cmbProspects.Size = new Size(420, 23);
             cmbProspects.TabIndex = 0;
             cmbProspects.Text = "Seleccionar prospecto";
+            cmbProspects.SelectedValueChanged += cmbProspects_SelectedValueChanged;
             // 
             // label9
             // 
             label9.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label9.AutoSize = true;
-            label9.Location = new Point(747, 218);
+            label9.Location = new Point(718, 218);
             label9.Name = "label9";
             label9.Size = new Size(34, 15);
             label9.TabIndex = 28;
@@ -80,7 +82,7 @@
             // 
             label8.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label8.AutoSize = true;
-            label8.Location = new Point(462, 218);
+            label8.Location = new Point(433, 218);
             label8.Name = "label8";
             label8.Size = new Size(51, 15);
             label8.TabIndex = 27;
@@ -90,7 +92,7 @@
             // 
             label7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label7.AutoSize = true;
-            label7.Location = new Point(166, 218);
+            label7.Location = new Point(137, 218);
             label7.Name = "label7";
             label7.Size = new Size(54, 15);
             label7.TabIndex = 26;
@@ -100,7 +102,7 @@
             // 
             label6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label6.AutoSize = true;
-            label6.Location = new Point(742, 180);
+            label6.Location = new Point(713, 180);
             label6.Name = "label6";
             label6.Size = new Size(36, 15);
             label6.TabIndex = 25;
@@ -110,7 +112,7 @@
             // 
             label5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label5.AutoSize = true;
-            label5.Location = new Point(482, 180);
+            label5.Location = new Point(453, 180);
             label5.Name = "label5";
             label5.Size = new Size(31, 15);
             label5.TabIndex = 24;
@@ -120,7 +122,7 @@
             // 
             label4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label4.AutoSize = true;
-            label4.Location = new Point(165, 180);
+            label4.Location = new Point(136, 180);
             label4.Name = "label4";
             label4.Size = new Size(55, 15);
             label4.TabIndex = 23;
@@ -130,7 +132,7 @@
             // 
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label3.AutoSize = true;
-            label3.Location = new Point(682, 143);
+            label3.Location = new Point(653, 143);
             label3.Name = "label3";
             label3.Size = new Size(104, 15);
             label3.TabIndex = 22;
@@ -140,7 +142,7 @@
             // 
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label2.AutoSize = true;
-            label2.Location = new Point(421, 143);
+            label2.Location = new Point(392, 143);
             label2.Name = "label2";
             label2.Size = new Size(92, 15);
             label2.TabIndex = 21;
@@ -150,7 +152,7 @@
             // 
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
-            label1.Location = new Point(165, 143);
+            label1.Location = new Point(136, 143);
             label1.Name = "label1";
             label1.Size = new Size(54, 15);
             label1.TabIndex = 20;
@@ -162,12 +164,13 @@
             AcceptBtn.BackColor = Color.FromArgb(58, 236, 79);
             AcceptBtn.BorderStyle = BorderStyle.FixedSingle;
             AcceptBtn.Image = (Image)resources.GetObject("AcceptBtn.Image");
-            AcceptBtn.Location = new Point(657, 318);
+            AcceptBtn.Location = new Point(146, 340);
             AcceptBtn.Name = "AcceptBtn";
-            AcceptBtn.Size = new Size(100, 50);
+            AcceptBtn.Size = new Size(199, 50);
             AcceptBtn.SizeMode = PictureBoxSizeMode.Zoom;
             AcceptBtn.TabIndex = 29;
             AcceptBtn.TabStop = false;
+            AcceptBtn.Click += AcceptBtn_Click;
             // 
             // DeclineBtn
             // 
@@ -175,28 +178,29 @@
             DeclineBtn.BackColor = Color.FromArgb(209, 26, 26);
             DeclineBtn.BorderStyle = BorderStyle.FixedSingle;
             DeclineBtn.Image = (Image)resources.GetObject("DeclineBtn.Image");
-            DeclineBtn.Location = new Point(811, 318);
+            DeclineBtn.Location = new Point(387, 340);
             DeclineBtn.Name = "DeclineBtn";
-            DeclineBtn.Size = new Size(100, 50);
+            DeclineBtn.Size = new Size(179, 50);
             DeclineBtn.SizeMode = PictureBoxSizeMode.Zoom;
             DeclineBtn.TabIndex = 30;
             DeclineBtn.TabStop = false;
             DeclineBtn.Click += DeclineBtn_Click;
             // 
-            // comboBox1
+            // cmbDocuments
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(165, 276);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(420, 23);
-            comboBox1.TabIndex = 31;
-            comboBox1.Text = "Ver documento";
+            cmbDocuments.FormattingEnabled = true;
+            cmbDocuments.Location = new Point(146, 276);
+            cmbDocuments.Name = "cmbDocuments";
+            cmbDocuments.Size = new Size(420, 23);
+            cmbDocuments.TabIndex = 31;
+            cmbDocuments.Text = "Ver documento";
+            cmbDocuments.SelectedValueChanged += cmbDocuments_SelectedValueChanged;
             // 
             // lblName
             // 
             lblName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblName.AutoSize = true;
-            lblName.Location = new Point(228, 143);
+            lblName.Location = new Point(199, 143);
             lblName.Name = "lblName";
             lblName.Size = new Size(0, 15);
             lblName.TabIndex = 32;
@@ -205,7 +209,7 @@
             // 
             lblPhoneNumber.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblPhoneNumber.AutoSize = true;
-            lblPhoneNumber.Location = new Point(228, 180);
+            lblPhoneNumber.Location = new Point(199, 180);
             lblPhoneNumber.Name = "lblPhoneNumber";
             lblPhoneNumber.Size = new Size(0, 15);
             lblPhoneNumber.TabIndex = 33;
@@ -214,7 +218,7 @@
             // 
             lblNumber.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblNumber.AutoSize = true;
-            lblNumber.Location = new Point(228, 218);
+            lblNumber.Location = new Point(199, 218);
             lblNumber.Name = "lblNumber";
             lblNumber.Size = new Size(0, 15);
             lblNumber.TabIndex = 34;
@@ -223,7 +227,7 @@
             // 
             lblFirstLastName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblFirstLastName.AutoSize = true;
-            lblFirstLastName.Location = new Point(519, 143);
+            lblFirstLastName.Location = new Point(490, 143);
             lblFirstLastName.Name = "lblFirstLastName";
             lblFirstLastName.Size = new Size(0, 15);
             lblFirstLastName.TabIndex = 35;
@@ -232,7 +236,7 @@
             // 
             lblRfc.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblRfc.AutoSize = true;
-            lblRfc.Location = new Point(519, 180);
+            lblRfc.Location = new Point(490, 180);
             lblRfc.Name = "lblRfc";
             lblRfc.Size = new Size(0, 15);
             lblRfc.TabIndex = 36;
@@ -241,7 +245,7 @@
             // 
             lblColony.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblColony.AutoSize = true;
-            lblColony.Location = new Point(519, 218);
+            lblColony.Location = new Point(490, 218);
             lblColony.Name = "lblColony";
             lblColony.Size = new Size(0, 15);
             lblColony.TabIndex = 37;
@@ -250,7 +254,7 @@
             // 
             lblSecondLastName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblSecondLastName.AutoSize = true;
-            lblSecondLastName.Location = new Point(792, 143);
+            lblSecondLastName.Location = new Point(769, 143);
             lblSecondLastName.Name = "lblSecondLastName";
             lblSecondLastName.Size = new Size(0, 15);
             lblSecondLastName.TabIndex = 38;
@@ -259,7 +263,7 @@
             // 
             lblStreet.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblStreet.AutoSize = true;
-            lblStreet.Location = new Point(792, 180);
+            lblStreet.Location = new Point(769, 180);
             lblStreet.Name = "lblStreet";
             lblStreet.Size = new Size(0, 15);
             lblStreet.TabIndex = 39;
@@ -268,15 +272,24 @@
             // 
             lblZipCode.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lblZipCode.AutoSize = true;
-            lblZipCode.Location = new Point(792, 218);
+            lblZipCode.Location = new Point(769, 218);
             lblZipCode.Name = "lblZipCode";
             lblZipCode.Size = new Size(0, 15);
             lblZipCode.TabIndex = 40;
+            // 
+            // pdfPanel
+            // 
+            pdfPanel.Dock = DockStyle.Right;
+            pdfPanel.Location = new Point(874, 0);
+            pdfPanel.Name = "pdfPanel";
+            pdfPanel.Size = new Size(461, 515);
+            pdfPanel.TabIndex = 41;
             // 
             // Evaluation
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(pdfPanel);
             Controls.Add(lblZipCode);
             Controls.Add(lblStreet);
             Controls.Add(lblSecondLastName);
@@ -286,7 +299,7 @@
             Controls.Add(lblNumber);
             Controls.Add(lblPhoneNumber);
             Controls.Add(lblName);
-            Controls.Add(comboBox1);
+            Controls.Add(cmbDocuments);
             Controls.Add(DeclineBtn);
             Controls.Add(AcceptBtn);
             Controls.Add(label9);
@@ -300,7 +313,8 @@
             Controls.Add(label1);
             Controls.Add(cmbProspects);
             Name = "Evaluation";
-            Size = new Size(942, 450);
+            Size = new Size(1335, 515);
+            Load += Evaluation_Load;
             ((System.ComponentModel.ISupportInitialize)AcceptBtn).EndInit();
             ((System.ComponentModel.ISupportInitialize)DeclineBtn).EndInit();
             ResumeLayout(false);
@@ -322,7 +336,7 @@
         private PictureBox AcceptBtn;
         private PictureBox DeclineBtn;
         private ToolTip toolTipMessage;
-        private ComboBox comboBox1;
+        private ComboBox cmbDocuments;
         private Label lblName;
         private Label lblPhoneNumber;
         private Label lblNumber;
@@ -332,5 +346,6 @@
         private Label lblSecondLastName;
         private Label lblStreet;
         private Label lblZipCode;
+        private Panel pdfPanel;
     }
 }

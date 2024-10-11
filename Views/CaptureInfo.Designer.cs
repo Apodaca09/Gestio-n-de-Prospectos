@@ -41,23 +41,24 @@
             label9 = new Label();
             label10 = new Label();
             label11 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
-            textBox8 = new TextBox();
-            textBox9 = new TextBox();
-            textBox10 = new TextBox();
+            txtName = new TextBox();
+            txtFirstLastName = new TextBox();
+            txtSecondLastName = new TextBox();
+            txtPhoneNumber = new TextBox();
+            txtRfc = new TextBox();
+            txtStreet = new TextBox();
+            txtNumber = new TextBox();
+            txtColony = new TextBox();
+            txtZipCode = new TextBox();
             BtnAdd = new PictureBox();
             BtnExam = new Button();
             BtnSend = new PictureBox();
             toolTipMessage = new ToolTip(components);
             lstDetailsFiles = new ListView();
+            BtnDelete = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)BtnAdd).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BtnSend).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)BtnDelete).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -170,85 +171,86 @@
             label11.TabIndex = 10;
             label11.Text = "Documentación";
             // 
-            // textBox1
+            // txtName
             // 
-            textBox1.Anchor = AnchorStyles.Left;
-            textBox1.Location = new Point(214, 34);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(275, 23);
-            textBox1.TabIndex = 11;
+            txtName.Anchor = AnchorStyles.Left;
+            txtName.Location = new Point(214, 34);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(275, 23);
+            txtName.TabIndex = 11;
+            txtName.KeyPress += txtName_KeyPress;
             // 
-            // textBox2
+            // txtFirstLastName
             // 
-            textBox2.Anchor = AnchorStyles.Left;
-            textBox2.Location = new Point(214, 71);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(275, 23);
-            textBox2.TabIndex = 12;
+            txtFirstLastName.Anchor = AnchorStyles.Left;
+            txtFirstLastName.Location = new Point(214, 71);
+            txtFirstLastName.Name = "txtFirstLastName";
+            txtFirstLastName.Size = new Size(275, 23);
+            txtFirstLastName.TabIndex = 12;
+            txtFirstLastName.KeyPress += txtFirstLastName_KeyPress;
             // 
-            // textBox3
+            // txtSecondLastName
             // 
-            textBox3.Anchor = AnchorStyles.Left;
-            textBox3.Location = new Point(214, 114);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(275, 23);
-            textBox3.TabIndex = 13;
+            txtSecondLastName.Anchor = AnchorStyles.Left;
+            txtSecondLastName.Location = new Point(214, 114);
+            txtSecondLastName.Name = "txtSecondLastName";
+            txtSecondLastName.Size = new Size(275, 23);
+            txtSecondLastName.TabIndex = 13;
+            txtSecondLastName.KeyPress += txtSecondLastName_KeyPress;
             // 
-            // textBox4
+            // txtPhoneNumber
             // 
-            textBox4.Anchor = AnchorStyles.Left;
-            textBox4.Location = new Point(214, 161);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(275, 23);
-            textBox4.TabIndex = 14;
+            txtPhoneNumber.Anchor = AnchorStyles.Left;
+            txtPhoneNumber.Location = new Point(214, 161);
+            txtPhoneNumber.Name = "txtPhoneNumber";
+            txtPhoneNumber.Size = new Size(275, 23);
+            txtPhoneNumber.TabIndex = 14;
+            txtPhoneNumber.KeyPress += txtPhoneNumber_KeyPress;
             // 
-            // textBox5
+            // txtRfc
             // 
-            textBox5.Anchor = AnchorStyles.Left;
-            textBox5.Location = new Point(212, 200);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(275, 23);
-            textBox5.TabIndex = 15;
+            txtRfc.Anchor = AnchorStyles.Left;
+            txtRfc.Location = new Point(212, 200);
+            txtRfc.Name = "txtRfc";
+            txtRfc.Size = new Size(275, 23);
+            txtRfc.TabIndex = 15;
+            txtRfc.KeyPress += txtRfc_KeyPress;
             // 
-            // textBox6
+            // txtStreet
             // 
-            textBox6.Anchor = AnchorStyles.Left;
-            textBox6.Location = new Point(212, 238);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(275, 23);
-            textBox6.TabIndex = 16;
+            txtStreet.Anchor = AnchorStyles.Left;
+            txtStreet.Location = new Point(212, 238);
+            txtStreet.Name = "txtStreet";
+            txtStreet.Size = new Size(275, 23);
+            txtStreet.TabIndex = 16;
+            txtStreet.KeyPress += txtStreet_KeyPress;
             // 
-            // textBox7
+            // txtNumber
             // 
-            textBox7.Anchor = AnchorStyles.Left;
-            textBox7.Location = new Point(212, 276);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(275, 23);
-            textBox7.TabIndex = 17;
+            txtNumber.Anchor = AnchorStyles.Left;
+            txtNumber.Location = new Point(212, 276);
+            txtNumber.Name = "txtNumber";
+            txtNumber.Size = new Size(275, 23);
+            txtNumber.TabIndex = 17;
+            txtNumber.KeyPress += txtNumber_KeyPress;
             // 
-            // textBox8
+            // txtColony
             // 
-            textBox8.Anchor = AnchorStyles.Left;
-            textBox8.Location = new Point(211, 314);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(275, 23);
-            textBox8.TabIndex = 18;
+            txtColony.Anchor = AnchorStyles.Left;
+            txtColony.Location = new Point(211, 314);
+            txtColony.Name = "txtColony";
+            txtColony.Size = new Size(275, 23);
+            txtColony.TabIndex = 18;
+            txtColony.KeyPress += txtColony_KeyPress;
             // 
-            // textBox9
+            // txtZipCode
             // 
-            textBox9.Anchor = AnchorStyles.Left;
-            textBox9.Location = new Point(211, 351);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(275, 23);
-            textBox9.TabIndex = 19;
-            // 
-            // textBox10
-            // 
-            textBox10.Anchor = AnchorStyles.Left;
-            textBox10.Location = new Point(633, 63);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(275, 23);
-            textBox10.TabIndex = 20;
+            txtZipCode.Anchor = AnchorStyles.Left;
+            txtZipCode.Location = new Point(211, 351);
+            txtZipCode.Name = "txtZipCode";
+            txtZipCode.Size = new Size(275, 23);
+            txtZipCode.TabIndex = 19;
+            txtZipCode.KeyPress += txtZipCode_KeyPress;
             // 
             // BtnAdd
             // 
@@ -256,24 +258,26 @@
             BtnAdd.BackColor = Color.FromArgb(112, 179, 255);
             BtnAdd.BorderStyle = BorderStyle.FixedSingle;
             BtnAdd.Image = (Image)resources.GetObject("BtnAdd.Image");
-            BtnAdd.Location = new Point(633, 102);
+            BtnAdd.Location = new Point(633, 97);
             BtnAdd.Name = "BtnAdd";
-            BtnAdd.Size = new Size(78, 35);
+            BtnAdd.Size = new Size(107, 35);
             BtnAdd.SizeMode = PictureBoxSizeMode.Zoom;
             BtnAdd.TabIndex = 21;
             BtnAdd.TabStop = false;
+            BtnAdd.Click += BtnAdd_Click;
             // 
             // BtnExam
             // 
             BtnExam.Anchor = AnchorStyles.Left;
             BtnExam.BackColor = Color.FromArgb(112, 179, 255);
             BtnExam.FlatStyle = FlatStyle.Flat;
-            BtnExam.Location = new Point(933, 63);
+            BtnExam.Location = new Point(633, 61);
             BtnExam.Name = "BtnExam";
-            BtnExam.Size = new Size(94, 23);
+            BtnExam.Size = new Size(394, 25);
             BtnExam.TabIndex = 22;
             BtnExam.Text = "Examinar";
             BtnExam.UseVisualStyleBackColor = false;
+            BtnExam.Click += BtnExam_Click;
             // 
             // BtnSend
             // 
@@ -281,42 +285,57 @@
             BtnSend.BackColor = Color.FromArgb(58, 236, 79);
             BtnSend.BorderStyle = BorderStyle.FixedSingle;
             BtnSend.Image = (Image)resources.GetObject("BtnSend.Image");
-            BtnSend.Location = new Point(739, 102);
+            BtnSend.Location = new Point(920, 97);
             BtnSend.Name = "BtnSend";
-            BtnSend.Size = new Size(78, 35);
+            BtnSend.Size = new Size(107, 35);
             BtnSend.SizeMode = PictureBoxSizeMode.Zoom;
             BtnSend.TabIndex = 23;
             BtnSend.TabStop = false;
+            BtnSend.Click += BtnSend_Click;
             // 
             // lstDetailsFiles
             // 
             lstDetailsFiles.Anchor = AnchorStyles.Left;
-            lstDetailsFiles.Location = new Point(624, 143);
+            lstDetailsFiles.Location = new Point(633, 143);
             lstDetailsFiles.Name = "lstDetailsFiles";
-            lstDetailsFiles.Size = new Size(403, 231);
+            lstDetailsFiles.Size = new Size(394, 231);
             lstDetailsFiles.TabIndex = 24;
             lstDetailsFiles.UseCompatibleStateImageBehavior = false;
             lstDetailsFiles.View = View.Details;
+            // 
+            // BtnDelete
+            // 
+            BtnDelete.Anchor = AnchorStyles.Left;
+            BtnDelete.BackColor = Color.Red;
+            BtnDelete.BorderStyle = BorderStyle.FixedSingle;
+            BtnDelete.Image = (Image)resources.GetObject("BtnDelete.Image");
+            BtnDelete.Location = new Point(773, 97);
+            BtnDelete.Name = "BtnDelete";
+            BtnDelete.Size = new Size(107, 35);
+            BtnDelete.SizeMode = PictureBoxSizeMode.Zoom;
+            BtnDelete.TabIndex = 25;
+            BtnDelete.TabStop = false;
+            BtnDelete.Click += BtnDelete_Click;
             // 
             // CaptureInfo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
+            Controls.Add(BtnDelete);
             Controls.Add(lstDetailsFiles);
             Controls.Add(BtnSend);
             Controls.Add(BtnExam);
             Controls.Add(BtnAdd);
-            Controls.Add(textBox10);
-            Controls.Add(textBox9);
-            Controls.Add(textBox8);
-            Controls.Add(textBox7);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtZipCode);
+            Controls.Add(txtColony);
+            Controls.Add(txtNumber);
+            Controls.Add(txtStreet);
+            Controls.Add(txtRfc);
+            Controls.Add(txtPhoneNumber);
+            Controls.Add(txtSecondLastName);
+            Controls.Add(txtFirstLastName);
+            Controls.Add(txtName);
             Controls.Add(label11);
             Controls.Add(label10);
             Controls.Add(label9);
@@ -332,6 +351,7 @@
             Size = new Size(1137, 457);
             ((System.ComponentModel.ISupportInitialize)BtnAdd).EndInit();
             ((System.ComponentModel.ISupportInitialize)BtnSend).EndInit();
+            ((System.ComponentModel.ISupportInitialize)BtnDelete).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -349,20 +369,20 @@
         private Label label9;
         private Label label10;
         private Label label11;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private TextBox textBox7;
-        private TextBox textBox8;
-        private TextBox textBox9;
-        private TextBox textBox10;
+        private TextBox txtName;
+        private TextBox txtFirstLastName;
+        private TextBox txtSecondLastName;
+        private TextBox txtPhoneNumber;
+        private TextBox txtRfc;
+        private TextBox txtStreet;
+        private TextBox txtNumber;
+        private TextBox txtColony;
+        private TextBox txtZipCode;
         private PictureBox BtnAdd;
         private Button BtnExam;
         private PictureBox BtnSend;
         private ToolTip toolTipMessage;
         private ListView lstDetailsFiles;
+        private PictureBox BtnDelete;
     }
 }

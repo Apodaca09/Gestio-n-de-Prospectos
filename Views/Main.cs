@@ -70,7 +70,7 @@ namespace Prospect_System.Views
             EvaluationIconButton.SizeMode = PictureBoxSizeMode.Zoom;
             EvaluationIconButton.TabIndex = 3;
             EvaluationIconButton.TabStop = false;
-            EvaluationIconButton.Click += this.EvaluationIconButton_Click;
+            EvaluationIconButton.Click += EvaluationIconButton_Click;
             // 
             // label1
             // 
@@ -122,6 +122,7 @@ namespace Prospect_System.Views
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Gestión de Prospectos";
             WindowState = FormWindowState.Maximized;
+            FormClosing += Main_FormClosing;
             ((System.ComponentModel.ISupportInitialize)CaptureIconButton).EndInit();
             ((System.ComponentModel.ISupportInitialize)ProspectIconButton).EndInit();
             ((System.ComponentModel.ISupportInitialize)EvaluationIconButton).EndInit();
@@ -131,20 +132,65 @@ namespace Prospect_System.Views
 
         private void EvaluationIconButton_Click(object? sender, EventArgs e)
         {
-            evaluation.Dock = DockStyle.Fill;
-            this.ContainerPages.Controls.Clear();
-            this.ContainerPages.Controls.Add(evaluation);
+            evaluation.LoadAsync();
+            if (capture.HasUnsavedData())
+            {
+                if (QuestionForClear("Advertencia", "Tienes datos sin guardar, estos se perderan. ¿Estás seguro de que deseas salir? ") == true)
+                {
+                    capture.ClearCaptureInfo();
+                    evaluation.Dock = DockStyle.Fill;
+                    this.ContainerPages.Controls.Clear();
+                    this.ContainerPages.Controls.Add(evaluation);
+                }
+            }
+            else
+            {
+                evaluation.Dock = DockStyle.Fill;
+                this.ContainerPages.Controls.Clear();
+                this.ContainerPages.Controls.Add(evaluation);
+            }
         }
 
         private void ProspectIconButton_Click(object? sender, EventArgs e)
         {
-            prospects.Dock = DockStyle.Fill;
-            this.ContainerPages.Controls.Clear();
-            this.ContainerPages.Controls.Add(prospects);
+            evaluation.ClearForm();
+            if (capture.HasUnsavedData())
+            {
+                if (QuestionForClear("Advertencia", "Tienes datos sin guardar, estos se perderan. ¿Estás seguro de que deseas salir? ") == true)
+                {
+                    capture.ClearCaptureInfo();
+                    prospects.Dock = DockStyle.Fill;
+                    this.ContainerPages.Controls.Clear();
+                    this.ContainerPages.Controls.Add(prospects);
+                    prospects.LoadAsync();
+                }
+            }
+            else
+            {
+                prospects.Dock = DockStyle.Fill;
+                this.ContainerPages.Controls.Clear();
+                this.ContainerPages.Controls.Add(prospects);
+                prospects.LoadAsync();
+            }
         }
 
+        public bool QuestionForClear(string title, string message)
+        {
+            bool YesNo = false;
+            DialogResult resultado = MessageBox.Show(message, title, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (resultado == DialogResult.Yes)
+            {
+                YesNo = true;
+            }
+            else if (resultado == DialogResult.No)
+            {
+                YesNo = false;
+            }
+            return YesNo;
+        }
         private void CaptureIconButton_Click(object? sender, EventArgs e)
         {
+            evaluation.ClearForm();
             capture.Dock = DockStyle.Fill;
             this.ContainerPages.Controls.Clear();
             this.ContainerPages.Controls.Add(capture);
@@ -158,5 +204,23 @@ namespace Prospect_System.Views
         private Label label1;
         private Label label2;
         private Label label3;
+
+        private void Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(capture.HasUnsavedData())
+            {
+                if(QuestionForClear("Confirmar salida", "Tienes datos sin guardar, estos se perderan. ¿Estás seguro de que deseas salir? ") ==true)
+                {
+                    capture.ClearCaptureInfo();
+                    MessageBox.Show("", "¡Hasta luego!", MessageBoxButtons.OK);
+                    e.Cancel = false;
+                    this.Close();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
     }
 }
